@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexGen Affiliate | Grow Together</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body style="background: #050505;">
+
+    <div class="container" style="max-width: 800px; margin: 0 auto; padding: 40px 20px;">
+        <div class="glass-card" style="text-align: center; border: 1px solid rgba(0, 255, 136, 0.2); padding: 40px;">
+            <div style="background: rgba(0, 255, 136, 0.1); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                <i class="fas fa-users-rays" style="font-size: 40px; color: #00ff88;"></i>
+            </div>
+            
+            <h1 style="color: #00ff88; font-size: 2rem;">Affiliate Network</h1>
+            <p style="color: #aaa;">Invite partners to the NexGen ecosystem and earn <span style="color: #bc13fe; font-weight: bold;">25% Lifetime Commission</span>.</p>
+            
+            <div style="background: rgba(255,255,255,0.03); padding: 25px; border-radius: 20px; margin: 30px 0; border: 1px dashed #444;">
+                <p style="margin-bottom: 15px; font-size: 14px; color: #888; text-transform: uppercase; letter-spacing: 1px;">Your Private Invitation Link</p>
+                <div style="display: flex; gap: 10px; background: #000; padding: 5px; border-radius: 12px;">
+                    <input type="text" value="https://nexgen-earn.vercel.app/ref/zaryab" id="refLink" readonly 
+                    style="flex: 1; padding: 12px; background: none; border: none; color: #00ff88; font-family: monospace;">
+                    <button onclick="copyLink()" class="btn-primary" style="padding: 10px 25px; border-radius: 10px;">Copy Link</button>
+                </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-around; margin-top: 40px; border-top: 1px solid #222; padding-top: 30px;">
+                <div style="text-align: center;">
+                    <h2 style="font-size: 2.5rem; color: white; margin-bottom: 5px;">12</h2>
+                    <p style="font-size: 12px; color: #666; text-transform: uppercase;">Active Nodes</p>
+                </div>
+                <div style="border-left: 1px solid #222;"></div>
+                <div style="text-align: center;">
+                    <h2 style="font-size: 2.5rem; color: #bc13fe; margin-bottom: 5px;">$45.00</h2>
+                    <p style="font-size: 12px; color: #666; text-transform: uppercase;">Network Yield</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function copyLink() {
+            var copyText = document.getElementById("refLink");
+            copyText.select();
+            copyText.setSelectionRange(0, 99999);
+            navigator.clipboard.writeText(copyText.value);
+            alert("NexGen Link copied successfully!");
+        }
+    </script>
+</body>
+</html>
+

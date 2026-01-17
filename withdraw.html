@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexGen Vault | Secure Withdrawal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .withdraw-container { max-width: 500px; margin: 50px auto; padding: 20px; }
+        .input-group { margin-bottom: 20px; text-align: left; }
+        .input-group label { display: block; margin-bottom: 8px; color: #00ff88; font-size: 14px; }
+        select, input { 
+            width: 100%; padding: 12px; border-radius: 12px; 
+            background: rgba(0,0,0,0.5); border: 1px solid rgba(188, 19, 254, 0.4); 
+            color: white; outline: none;
+        }
+        .balance-display { text-align: center; margin-bottom: 30px; border: 1px solid #00ff88; }
+        .note { color: #888; font-size: 12px; margin-top: 15px; text-align: center; }
+    </style>
+</head>
+<body style="background: #050505;">
+
+    <div class="withdraw-container">
+        <div class="glass-card balance-display">
+            <p style="text-transform: uppercase; letter-spacing: 1px;">NexGen Vault Balance</p>
+            <h1 id="balance" style="color: #00ff88; font-size: 3rem;">$0.00</h1>
+        </div>
+
+        <div class="glass-card withdraw-form">
+            <h2 style="margin-bottom: 20px; text-align: center;">Secure Cashout</h2>
+            
+            <div class="input-group">
+                <label><i class="fas fa-wallet"></i> Payout Method</label>
+                <select id="method">
+                    <option value="jazzcash">JazzCash (Fast)</option>
+                    <option value="easypaisa">EasyPaisa (Fast)</option>
+                    <option value="bank">Direct Bank Node</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label><i class="fas fa-fingerprint"></i> Account/ID Number</label>
+                <input type="text" placeholder="03xx xxxxxxx">
+            </div>
+
+            <div class="input-group">
+                <label><i class="fas fa-dollar-sign"></i> Amount to Dispatch</label>
+                <input type="number" id="withdraw-amount" placeholder="Min. $5.00">
+            </div>
+
+            <button onclick="requestWithdraw()" class="btn-primary" style="width: 100%; border: none; cursor: pointer;">
+                Initialize Withdrawal
+            </button>
+        </div>
+
+        <p class="note"><i class="fas fa-shield-alt"></i> NexGen Security: Processing may take up to 24 hours.</p>
+    </div>
+
+    <script src="App.js"></script>
+</body>
+</html>
+

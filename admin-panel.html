@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NexGen Admin | Control Center</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
+</head>
+<body style="display: flex; background-color: #0a0b10;">
+
+    <nav class="glass-card" style="width: 250px; height: 100vh; margin: 10px; border-right: 2px solid #00ff88;">
+        <h2 style="color: #00ff88;">NexGen<span>Earn</span></h2>
+        <ul style="list-style: none; margin-top: 30px; line-height: 2.5;">
+            <li><i class="fas fa-users"></i> Users Control</li>
+            <li><i class="fas fa-wallet"></i> Pending Withdraws</li>
+            <li><i class="fas fa-ad"></i> Manage Tasks</li>
+        </ul>
+    </nav>
+
+    <div style="flex: 1; padding: 20px;">
+        <div class="glass-card" style="margin-bottom: 20px;">
+            <h3>NexGen Earning Stats</h3>
+            <canvas id="earningChart" width="400" height="150"></canvas>
+        </div>
+
+        <div class="glass-card">
+            <h3>Recent Withdraw Requests</h3>
+            <table style="width: 100%; color: white; border-collapse: collapse;">
+                <tr style="border-bottom: 1px solid #00ff88;">
+                    <th>User ID</th>
+                    <th>Amount</th>
+                    <th>Method</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td>#ZARYAB_01</td>
+                    <td>$50.00</td>
+                    <td>JazzCash</td>
+                    <td><button class="btn-primary" style="padding: 5px 10px; background: #00ff88; color: black;">Approve</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('earningChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+                datasets: [{
+                    label: 'Platform Revenue ($)',
+                    data: [120, 190, 300, 500, 200, 400],
+                    borderColor: '#00ff88',
+                    backgroundColor: 'rgba(0, 255, 136, 0.1)',
+                    fill: true,
+                    tension: 0.4
+                }]
+            }
+        });
+    </script>
+</body>
+</html>
+
